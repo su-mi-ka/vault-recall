@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "vault-recall"
+version = "0.1.0"
+description = "Two-stage memory recall over an Obsidian-compatible Markdown vault: vector hits are only seeds, results come from tags (IDF-weighted) and [[wikilinks]] (hop-decayed). Includes a short-term todo memo that stays at the top of recall until done."
+requires-python = ">=3.11"
+readme = "README.md"
+dependencies = []
+
+[project.optional-dependencies]
+yaml = ["PyYAML>=6"]
+test = ["pytest>=7"]
+
+[tool.setuptools]
+packages = ["vault_recall"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
